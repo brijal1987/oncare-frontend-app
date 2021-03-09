@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.31e9cdfe.chunk.css",
+    "main.js": "/static/js/main.ee9d6e07.chunk.js",
+    "main.js.map": "/static/js/main.ee9d6e07.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.81ad85a7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.81ad85a7.js.map",
+    "static/css/2.b6fb1a27.chunk.css": "/static/css/2.b6fb1a27.chunk.css",
+    "static/js/2.6f18298b.chunk.js": "/static/js/2.6f18298b.chunk.js",
+    "static/js/2.6f18298b.chunk.js.map": "/static/js/2.6f18298b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.b6fb1a27.chunk.css.map": "/static/css/2.b6fb1a27.chunk.css.map",
+    "static/css/main.31e9cdfe.chunk.css.map": "/static/css/main.31e9cdfe.chunk.css.map",
+    "static/js/2.6f18298b.chunk.js.LICENSE.txt": "/static/js/2.6f18298b.chunk.js.LICENSE.txt",
+    "static/media/main.css": "/static/media/Poppins-Regular.1c701c9a.ttf",
+    "static/media/semantic.min.css": "/static/media/outline-icons.ddae9b1b.woff",
+    "static/media/sort-asc.svg": "/static/media/sort-asc.163cf422.svg",
+    "static/media/sort-desc.svg": "/static/media/sort-desc.b5dc6e33.svg",
+    "static/media/unsorted.svg": "/static/media/unsorted.cda97ee9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81ad85a7.js",
+    "static/css/2.b6fb1a27.chunk.css",
+    "static/js/2.6f18298b.chunk.js",
+    "static/css/main.31e9cdfe.chunk.css",
+    "static/js/main.ee9d6e07.chunk.js"
+  ]
+}
