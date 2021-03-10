@@ -1,12 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import DataTable from 'react-data-table-component';
+import { Link } from 'react-router-dom';
 import { BACKEND_API } from '../../constants'
 import { authenticationService } from '../../services/authentication.service';
 import { toastrService } from '../../services/toastr.service';
 
+const columns = [
+  { name: "#", selector: "id" },
+  { name: "First name", selector: "first_name" },
+  { name: 'Last Name', selector: "last_name" },
+  { name: 'Email', selector: "email" },
+  {
+    name: "action",
+    cell: (row) => {
+      return (
+        <>
+          <Link to={`/users/${row.id}/edit`}>Edit</Link>&nbsp; <Link to={`/users/${row.id}/delete`}>Delete</Link>
+        </>
+      )
+    },
+  }
+];
+
 const Dashboard = () => {
   const [loginLoading, setLoginLoading] = useState(true);
-  const [profileData, setProfileData] = useState([]);
+  const [users, setUsers] = useState([]);
   const currentUser = authenticationService.getCurrentUser();
 
   const fetchData = async () => {
@@ -14,10 +33,10 @@ const Dashboard = () => {
 
     try {
       const { data } = await axios
-        .get(BACKEND_API + "profile?secret_token="+ currentUser.token)
-      setLoginLoading(false);
-      if (data && data.user) {
-        setProfileData(data.user);
+        .get(BACKEND_API + "users?secret_token="+ currentUser.token)
+      if (data && data.users) {
+        setUsers(data.users);
+        setLoginLoading(false);
       } else {
         toastrService.error(data.message)
       }
@@ -27,7 +46,6 @@ const Dashboard = () => {
         toastrService.error("Something went wrong");
     }
   };
-
 
   useEffect(() => {
     fetchData();
@@ -40,26 +58,15 @@ const Dashboard = () => {
         {loginLoading && <div className={'logonFormLoader'}>&nbsp;</div>}
         {!loginLoading && (<>
           <div className="row">
-          <div className="col-md-12"><h1>User Profile</h1></div>
+          <div className="col-md-12"><h1>Users</h1></div>
         </div>
         <hr/>
-        <div className="row">
-          <table width="80%" border="0" cellPadding="20" cellSpacing="10">
-          <tr>
-              <td>Firstname:</td>
-              <td>{profileData.first_name}</td>
-            </tr>
-            <tr>
-              <td>Lastname:</td>
-              <td>{profileData.last_name}</td>
-            </tr>
-            <tr>
-              <td>Email:</td>
-              <td>{profileData.email}</td>
-            </tr>
-          </table>
-
-        </div>
+        {users && users.length > 0 && 
+        (<DataTable striped bordered
+          data={users}
+          columns={columns}
+          pagination
+        />)}
         </>)}
       </div>
     </>

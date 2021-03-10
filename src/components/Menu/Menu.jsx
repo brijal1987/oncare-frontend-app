@@ -7,18 +7,22 @@ const Menu = () => {
   return (
     <>
       <div className="menu row">
-          <div className="col-md-6">
-            <div className="header-link"><Link to={{pathname:"/"}}>Menu</Link>
-            </div>
+        <div className="col-md-6">
+          <div className="header-link"><Link to={{pathname:"/"}}>OnCare</Link>
           </div>
-          <div className={'col-md-6 top-menu'}>
-            <Link to="/logout">Logout</Link>
-            <Link to="/users">Users</Link>
-            <Link to="/">Home</Link>
+        </div>
+        <div className="col-md-6">
+          <div className="welcome align-right">
+            Welcome <span> {currentUser.firstname} {currentUser.lastname}</span>
           </div>
+        </div>
       </div>
-      <div className="menu welcome align-right">
-      Welcome <span> {currentUser.firstname} {currentUser.lastname}</span>
+      <div className="menu row  align-right">
+        <div className={'col-md-12 top-menu '}>
+          <Link to="/logout">Logout</Link>
+          <Link to="/profile">Profile</Link>
+          <Link to="/">Home</Link>
+        </div>
       </div>
     </>
   );

@@ -145,3 +145,6 @@ li img {
   padding-left: 20px;
   padding-right: 20px;
 }
+.header-link, .header-link:hover {
+  text-decoration: none;
+}

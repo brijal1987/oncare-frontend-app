@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
-import Users from './pages/Users';
+import Profile from './pages/Profile';
 import Edituser from './pages/Edituser';
 import Deleteuser from './pages/Deleteuser';
 import Dashboard from './pages/Dashboard';
@@ -28,7 +28,7 @@ const App = () => {
               <Switch>
                 <AuthCheck exact path={DASHBOARD} component={Dashboard} />
                 <AuthCheck exact path="/" component={Dashboard} />
-                <AuthCheck exact path="/users" component={Users} />
+                <AuthCheck exact path="/profile" component={Profile} />
                 <AuthCheck path="/users/:id/edit" component={Edituser} />
                 <AuthCheck path="/users/:id/delete" component={Deleteuser} />
                 <Route exact path={REGISTER} component={Register} />
