@@ -47,7 +47,7 @@ const Edituser = (props) => {
     } catch (err) {
       setLoginLoading(false);
       toastrService.error("Something went wrong");
-      history.push(`/users`);
+      history.push(`/`);
     }
   };
 
@@ -75,20 +75,22 @@ const Edituser = (props) => {
         setLoginLoading(false);
         if (data && data.id) {
           toastrService.success("User successfully updated.")
-          history.push(`/users`);
+          history.push(`/`);
         } else {
           if (data.error){
             toastrService.error(data.message)
           }
+          history.push(`/`);
         }
       }else{
         toastrService.error("Invalid Form, Please enter proper values")
         setLoginLoading(false);
+        history.push(`/`);
       }
     } catch (err) {
       toastrService.error("Something went wrong!")
       setLoginLoading(false);
-      history.push(`/users`);
+      history.push(`/`);
     }
   };
 
@@ -112,7 +114,6 @@ const Edituser = (props) => {
   const handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
-    console.log('---', name, value)
     const validEmailRegex = RegExp(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}/g);
     switch (name) {
       case 'firstname':

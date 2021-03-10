@@ -19,16 +19,17 @@ const Deleteuser = (props) => {
       const { data } = await axios.delete(`${BACKEND_API}users/${userID}?secret_token=${currentUser.token}`)
       if (data && data.id) {
         toastrService.success("User successfully deleted.")
-        history.push(`/users`);
+        history.push(`/`);
       } else {
         if (data.error){
           toastrService.error(data.message)
+          history.push(`/`);
         }
       }
       return [];
     } catch (err) {
       toastrService.error("Something went wrong");
-      history.push(`/users`);
+      history.push(`/`);
     }
   };
 
