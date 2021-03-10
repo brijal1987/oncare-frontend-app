@@ -10,12 +10,12 @@ Technology stack : docker , node.js , react , sequelize.js
 # Building by docker compose
 
 ## Start Server - Building docker image
-`docker-compose up -d --build`
+`npm run-script docker-up`
 
 ## Check API running on
 `http://localhost:5000/`
 
 ## Stop Server
-`docker-compose stop`
+`npm run-script docker-stop`
 
 

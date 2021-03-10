@@ -8,10 +8,11 @@
     "dev:start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker-up": "docker-compose up -d --build",
+    "docker-stop": "docker-compose stop"
   },
   "dependencies": {
-    "@bit/adeoy.utils.data-table": "^0.3.8",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "dotenv": "^8.2.0",
